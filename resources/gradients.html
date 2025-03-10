@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Collection</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gradient-box {
+            width: 300px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .gradient-box:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎨 Beautiful Gradient Collection</h1>
+    <div class="container" id="gradientContainer"></div>
+
+    <script>
+        const gradients = [
+            ["#ff9a9e", "#fad0c4"],
+            ["#a18cd1", "#fbc2eb"],
+            ["#667eea", "#764ba2"],
+            ["#ff9966", "#ff5e62"],
+            ["#00c6ff", "#0072ff"],
+            ["#4facfe", "#00f2fe"]
+        ];
+
+        const container = document.getElementById("gradientContainer");
+
+        gradients.forEach((colors, index) => {
+            const gradientBox = document.createElement("div");
+            gradientBox.className = "gradient-box";
+            gradientBox.style.background = `linear-gradient(45deg, ${colors[0]}, ${colors[1]})`;
+            gradientBox.textContent = `${colors[0]} → ${colors[1]}`;
+            container.appendChild(gradientBox);
+        });
+    </script>
+
+</body>
+</html>
